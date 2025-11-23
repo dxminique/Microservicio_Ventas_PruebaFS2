@@ -37,5 +37,6 @@ public class VentaController {
         Venta nueva = ventaService.crearVenta(venta);
         return new ResponseEntity<>(nueva, HttpStatus.CREATED);
     }
+
 }
 
