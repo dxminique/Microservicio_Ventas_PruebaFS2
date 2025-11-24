@@ -20,4 +20,9 @@ public class VentaService {
     public Venta crearVenta(Venta venta) {
         return ventaRepository.save(venta);
     }
+
+    public List<Venta> listarPorCliente(String cliente) {
+        return ventaRepository.findByCliente(cliente);
+    }
+
 }

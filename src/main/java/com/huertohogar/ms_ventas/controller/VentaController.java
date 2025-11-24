@@ -32,11 +32,18 @@ public class VentaController {
         return ventaService.listarVentas();
     }
 
+    @GetMapping(params = "cliente")
+    public List<Venta> listarPorCliente(@RequestParam String cliente) {
+        return ventaService.listarPorCliente(cliente);
+    }
+
+
     @PostMapping
     public ResponseEntity<Venta> crearVenta(@RequestBody Venta venta) {
         Venta nueva = ventaService.crearVenta(venta);
         return new ResponseEntity<>(nueva, HttpStatus.CREATED);
     }
+
 
 }
 
