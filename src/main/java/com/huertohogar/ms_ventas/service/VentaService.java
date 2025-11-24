@@ -21,8 +21,10 @@ public class VentaService {
         return ventaRepository.save(venta);
     }
 
-    public List<Venta> listarPorCliente(String cliente) {
-        return ventaRepository.findByCliente(cliente);
+    public List<Venta> listarPorCliente(String email) {
+        return ventaRepository.findByCliente(email);
     }
+
+
 
 }

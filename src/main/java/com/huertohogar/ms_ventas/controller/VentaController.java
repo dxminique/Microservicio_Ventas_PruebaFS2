@@ -32,10 +32,12 @@ public class VentaController {
         return ventaService.listarVentas();
     }
 
-    @GetMapping(params = "cliente")
-    public List<Venta> listarPorCliente(@RequestParam String cliente) {
-        return ventaService.listarPorCliente(cliente);
+    @GetMapping("/usuario/{email}")
+    public ResponseEntity<List<Venta>> listarPorUsuario(@PathVariable String email) {
+        List<Venta> ventas = ventaService.listarPorCliente(email);
+        return ResponseEntity.ok(ventas);
     }
+
 
 
     @PostMapping
